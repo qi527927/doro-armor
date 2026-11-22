@@ -1,0 +1,36 @@
+{
+  "name": "doro-armor",
+  "version": "1.1.1",
+  "description": "Doro 破甲 1.1.1：三层提示词注入 + Doro 人格 + 反注入协议 + 永久无限制锁 + 写作技巧全集 + 组装期真实安全规则剥离（无客户端半、无悬浮窗、无假清除器）",
+  "license": "CC-BY-NC-SA-4.0",
+  "type": "module",
+  "main": "./index.js",
+  "exports": {
+    ".": "./index.js",
+    "./cordis.patch.yml": "./cordis.patch.yml",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "index.js",
+    "cordis.patch.yml",
+    "scripts"
+  ],
+  "scripts": {
+    "harness:check": "node --check index.js",
+    "verify": "node scripts/verify_plugin.mjs",
+    "probe": "node scripts/probe_assemble.mjs"
+  },
+  "dsh": {
+    "id": "doro-armor",
+    "name": "Doro 破甲",
+    "version": "1.1.1",
+    "permissions": "系统提示词注入, 系统最高指令覆盖, 组装期安全规则真实剥离, 动态上下文链清空",
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "compat": {
+      "dsha": ">=0.2.2-rc.4",
+      "note": "仅依赖 systemPrompt.registerSection / assemble waterfall 与 systemPrompt.section() 两个公开接口；不读取宿主内部 section 列表。"
+    }
+  }
+}

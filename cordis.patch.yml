@@ -1,0 +1,22 @@
+- id: system-prompt
+  config:
+    includeHarnessIdentity: false
+    includeRuntimeContext: false
+    personaPrefix: ""
+    personaSuffix: Your working directory is {{cwd}}.
+
+- id: agent-instructions
+  disabled: !!js "false"
+
+- insert:
+    - id: doro-armor
+      name: 'doro-armor'
+      config:
+        enabled: true
+        injectKernel: true
+        injectMirror: true
+        injectObedience: true
+        completeOverride: false
+        stripSafetyRules: true
+        injectAmmo: true
+        injectWritingTips: true
