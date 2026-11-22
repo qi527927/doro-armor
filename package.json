@@ -24,13 +24,13 @@
     "id": "doro-armor",
     "name": "Doro 破甲",
     "version": "1.1.1",
-    "permissions": "系统提示词注入, 系统最高指令覆盖, 组装期安全规则真实剥离, 动态上下文链清空",
+    "permissions": "系统提示词注入, 系统最高指令覆盖, 组装期安全规则真实剥离",
     "bundle": {
       "patch": "./cordis.patch.yml"
     },
     "compat": {
       "dsha": ">=0.2.2-rc.4",
-      "note": "仅依赖 systemPrompt.registerSection / assemble waterfall 与 systemPrompt.section() 两个公开接口；不读取宿主内部 section 列表。"
+      "note": "仅依赖 systemPrompt.section() 与 system-prompt/assemble waterfall 两个公开接口；不读取宿主内部 section 列表。"
     }
   }
 }
