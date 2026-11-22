@@ -16,7 +16,7 @@ const check = (label, fn) => {
 const assert = (cond, msg) => { if (!cond) throw new Error(msg) }
 const read = (p) => readFileSync(join(ROOT, p), 'utf8')
 
-console.log('\n[1/6] 文件构成（1.1.1 只剩宿主半，无客户端半）')
+console.log('\n[1/6] 文件构成（1.1.0 只剩宿主半，无客户端半）')
 const REQUIRED = ['index.js', 'cordis.patch.yml', 'package.json']
 const FORBIDDEN = ['client.js', 'install.sh', 'scripts/probe_no_overlay.mjs']
 for (const f of REQUIRED) check(`${f} 在位`, () => assert(existsSync(join(ROOT, f)), '缺少文件'))
