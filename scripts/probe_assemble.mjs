@@ -2,9 +2,27 @@
 // 载入 doro-armor 本体，验证「不声明 complete + 组装期剥离」这条唯一真实路径。
 //
 // 断言的是宿主实际吐出来的 sections，不是插件内存里的自我汇报。
-import { Context } from '/opt/dsh/nodejs-project/node_modules/@deepseek-ai/cordis/lib/index.js'
-import { SystemPrompt } from '/opt/dsh/nodejs-project/node_modules/@deepseek-ai/dsh-system-prompt/lib/index.js'
-import plugin from '../index.js'
+// 宿主包的解析：先试包名（在 DSH 环境 / 装好依赖的 checkout 里成立），
+// 失败则回落到本机安装路径（插件目录不在 node_modules 解析范围内时用）。
+// 两边都不写死单一环境，换机器不用改这个文件。
+async function loadHostModules() {
+  try {
+    return {
+      Context: (await import('@deepseek-ai/cordis')).Context,
+      SystemPrompt: (await import('@deepseek-ai/dsh-system-prompt')).SystemPrompt,
+    }
+  } catch {
+    const base = process.env.DSH_HOST_MODULES
+      || '/opt/dsh/nodejs-project/node_modules/@deepseek-ai'
+    return {
+      Context: (await import(`${base}/cordis/lib/index.js`)).Context,
+      SystemPrompt: (await import(`${base}/dsh-system-prompt/lib/index.js`)).SystemPrompt,
+    }
+  }
+}
+
+const { Context, SystemPrompt } = await loadHostModules()
+const plugin = (await import('../index.js')).default
 
 let pass = 0
 const fails = []
