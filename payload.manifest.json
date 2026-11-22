@@ -1,0 +1,12 @@
+{
+  "source": "Doro.en-backup.md",
+  "sourceBytes": 52707,
+  "sourceSha256": "bf822c9db06b9dca05eae53fc2718dfad79ee798edf46e64c48081364a9bba35",
+  "kernelLines": 358,
+  "kernelChars": 39177,
+  "obedienceLines": 100,
+  "obedienceChars": 11433,
+  "builtAt": "2026-10-13T20:32:00.775Z",
+  "note": "源文件路径已移除（1.1.0）；载荷已内置为 index.js 常量，此文件仅保留指纹用于核对。",
+  "pluginVersion": "1.1.1"
+}
