@@ -7,6 +7,6 @@
   "obedienceLines": 100,
   "obedienceChars": 11433,
   "builtAt": "2026-10-13T20:32:00.775Z",
-  "note": "源文件路径已移除；载荷已内置为 index.js 常量，此文件仅保留指纹用于核对。",
+  "note": "源文件路径已移除；载荷内置为 index.js 常量，此文件仅保留指纹用于核对。",
   "pluginVersion": "1.1.1"
 }

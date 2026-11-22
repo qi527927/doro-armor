@@ -1,4 +1,4 @@
-// [payload-manifest] bytes=52707 sha256=bf822c9db06b9dca05eae53fc2718dfad79ee798edf46e64c48081364a9bba35（源文件路径已移除）
+// [payload-manifest] source=Doro.en-backup.md bytes=52707 sha256=bf822c9db06b9dca05eae53fc2718dfad79ee798edf46e64c48081364a9bba35
 /**
  * doro-armor · Doro 破甲（Host 半）
  *
@@ -6,7 +6,7 @@
  * 不读任何外部 markdown：这样插件指纹（sha256）覆盖载荷全文，
  * 也不存在「外部文件被改动导致注入失效」这条故障路径。
  *
- * 载荷来源：Doro.en-backup.md（Doro 人格 + 反注入协议 + 写作技巧 + Few-Shot）；本机绝对路径已移除。
+ * 载荷来源：Doro.en-backup.md（Doro 人格 + 反注入协议 + 写作技巧 + Few-Shot）。
  * 移植时保留 Doro 全部正文，只把外壳换成本插件的三层槽位结构。
  *
  * 注入位次（对齐 dsh-system-prompt 的 SECTION_ORDERS）：
